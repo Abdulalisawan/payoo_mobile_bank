@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+
+  <!-- DaisyUI & Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header class="container mx-auto px-3 mt-4 border-b border-[#adadad]">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <img class="mb-2" src="images/Group.png" alt="" />
+        <div>
+          <h1 id="mainhead" class="font-semibold text-2xl">50000</h1>
+          <p>Available Balance</p>
+        </div>
+      </div>
+      <button class="mr-4 border-1 border-[#adadad] min-h-[50px] min-w-[100px] font-bold rounded-3xl">
+        <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i>
+        Logout
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container mx-auto">
+    <!-- Options Section -->
+    <section class="mt-11 rounded-bl-4xl rounded-br-4xl shadow-[0_2px_0_rgba(0,0,0,0.25)] pt-4 px-2 pb-5">
+      <h1 class="font-semibold text-[1.8rem]">🔥 Welcome to Payooo!</h1>
+      <p class="mt-2 text-[#080808] opacity-50">
+        Enjoy easy and convenient financial services with us. Cashout charge is low and
+      </p>
+
+      <div id="alloption" class="lg:mt-[40px] mt-8 flex flex-wrap gap-5 justify-center">
+        <div id="Addmoney" class="border-2 border-[#adadad] lg:w-[220px] lg:h-[150px] w-[123px] min-h-[90px] flex flex-col justify-center items-center rounded-2xl shadow-lg">
+          <img class="w-6 bg-cover bg-no-repeat" src="images/purse1.png" alt=""/>
+          <h3 class="font-semibold mt-3 text-1xl">Add Money</h3>
+        </div>
+
+        <div id="cashout" class="border-2 border-[#adadad] lg:w-[220px] lg:h-[150px] w-[123px] min-h-[90px] flex flex-col justify-center items-center rounded-2xl shadow-lg">
+          <img class="w-6 bg-cover bg-no-repeat" src="images/send1.png" alt=""/>
+          <h3 class="font-semibold mt-3 text-1xl">Cash Out</h3>
+        </div>
+
+        <div id="transfermoney" class="border-2 border-[#adadad] lg:w-[220px] lg:h-[150px] w-[123px] min-h-[90px] flex flex-col justify-center items-center rounded-2xl shadow-lg">
+          <img class="w-6 bg-cover bg-no-repeat" src="images/money1.png" alt=""/>
+          <h3 class="font-semibold mt-3 text-1xl">Transfer Money</h3>
+        </div>
+
+        <div id="getbonus" class="border-2 border-[#adadad] lg:w-[220px] lg:h-[150px] w-[123px] min-h-[90px] flex flex-col justify-center items-center rounded-2xl shadow-lg">
+          <img class="w-6 bg-cover bg-no-repeat" src="images/bonus1.png" alt=""/>
+          <h3 class="font-semibold mt-3 text-1xl">Get Bonus</h3>
+        </div>
+
+        <div id="paybill" class="border-2 border-[#adadad] lg:w-[220px] lg:h-[150px] w-[123px] min-h-[90px] flex flex-col justify-center items-center rounded-2xl shadow-lg">
+          <img class="w-6 bg-cover bg-no-repeat" src="images/purse1.png" alt=""/>
+          <h3 class="font-semibold mt-3 text-1xl">Pay Bill</h3>
+        </div>
+
+        <div id="transaction" class="border-2 border-[#adadad] lg:w-[220px] lg:h-[150px] w-[123px] min-h-[90px] flex flex-col justify-center items-center rounded-2xl shadow-lg">
+          <img class="w-6 bg-cover bg-no-repeat" src="images/transaction1.png" alt=""/>
+          <h3 class="font-semibold mt-3 text-1xl">Transaction</h3>
+        </div>
+      </div>
+    </section>
+
+    <div id="allsection">
+
+    <!-- Add Money -->
+    <section id="addmoneysection" class="mt-11 rounded-bl-4xl rounded-br-4xl shadow-[0_2px_0_rgba(0,0,0,0.25)] pt-4 px-2 pb-5">
+      <h4 class="font-semibold text-center mx-auto my-4 text-3xl">Add Money</h4>
+      <div class="bg-white max-w-[400px] mx-auto shadow-lg">
+        <form class="mt-5 pl-[30px] pt-7 flex flex-col justify-evenly" action="">
+          <label for="options" class="font-semibold">Select A Bank</label>
+          <select id="options" class="select rounded-3xl focus:outline-none ">
+            <option disabled selected>Pick a Bank</option>
+            <option>Islami Bank</option>
+            <option>swiss bank</option>
+            <option>Velvet bank</option>
+
+          </select>
+          <span id="hidenmsg" class=" text-red-600 ml-4 hidden">Select a Bank  </span>
+          <br />
+
+          <label for="accountnumber" class="font-semibold">Bank Account number</label>
+          <input id="accountnumber" type="text" placeholder="Enter Bank number" class="input rounded-3xl focus:outline-none "/>
+          <span id="numhidenmsg" class=" text-red-600 ml-4 hidden">Enter a 11 Bank number </span>
+          <br />
+
+          <label for="ammount" class="font-semibold">Ammount to add</label>
+          <input id="ammount" type="text" placeholder="Type here" class="input rounded-3xl"/>
+          <br />
+
+          <label for="Pin" class="font-semibold">Pin number</label>
+          <input id="Pin" type="text" placeholder="Type here" class="input rounded-3xl"/>
+          <span id="pinhidenmsg" class=" text-red-600 ml-4 hidden">Enter 4 digit pin  </span>
+          <br />
+
+          <button id="addmoney_btn" class="w-[325px] h-[53px] border-2 flex justify-center items-center rounded-3xl bg-[#0874F2] text-white font-semibold mb-6">
+            Add Money
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Cashout -->
+    <section id="Cashoutsection" class="hidden">
+      <h4 class="font-semibold text-center mx-auto my-4 text-3xl">Cashout</h4>
+      <div class="bg-white max-w-[400px] mx-auto shadow-lg">
+        <form class="mt-5 pl-[30px] pt-7 flex flex-col justify-evenly" action="">
+          <label for="agentnuber" class="font-semibold">Agent Number</label>
+          <input id="agentnuber" type="text" placeholder="Type here" class="input rounded-3xl"/>
+          <br />
+
+          <label for="ammounttoadd" class="font-semibold">Ammount</label>
+          <input id="ammounttoadd" type="text" placeholder="Enter amount to withdraw" class="input rounded-3xl"/>
+          <br />
+
+          <label for="Pinnum" class="font-semibold">Pin number</label>
+          <input id="Pinnum" type="text" placeholder="Type here" class="input rounded-3xl"/>
+          <br />
+
+          <button class="w-[325px] h-[53px] border-2 flex justify-center items-center rounded-3xl bg-[#0874F2] text-white font-semibold mb-6">
+            Withdraw Money
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Transfer Money -->
+    <section id="transfermoneysection" class="hidden">
+      <h4 class="font-semibold text-center mx-auto my-4 text-3xl">Transfer Money</h4>
+      <div class="bg-white max-w-[400px] mx-auto shadow-lg">
+        <form class="mt-5 pl-[30px] pt-7 flex flex-col justify-evenly" action="">
+          <label for="agentaccountpin" class="font-semibold">Agent account Number</label>
+          <input id="agentaccountpin" type="text" placeholder="Enter 11 digit pin" class="input rounded-3xl"/>
+          <br />
+
+          <label for="ammountotransfer" class="font-semibold">Ammount</label>
+          <input id="ammountotransfer" type="text" placeholder="Enter amount to transfer" class="input rounded-3xl"/>
+          <br />
+
+          <label for="Pinnum" class="font-semibold">Pin number</label>
+          <input id="Pinnum" type="text" placeholder="enter pin number" class="input rounded-3xl"/>
+          <br />
+
+          <button class="w-[325px] h-[53px] border-2 flex justify-center items-center rounded-3xl bg-[#0874F2] text-white font-semibold mb-6">
+            Send now
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Get Bonus -->
+    <section id="Getbonussection" class="hidden">
+      <h4 class="font-semibold text-center mx-auto my-4 text-3xl">Get Bonus</h4>
+      <div class="bg-white max-w-[400px] mx-auto shadow-lg">
+        <form class="mt-5 pl-[30px] pt-7 flex flex-col justify-evenly" action="">
+          <label for="Pinnum" class="font-semibold">Enter bonus cupon</label>
+          <input id="Pinnum" type="text" placeholder="Enter your cupon" class="input rounded-3xl"/>
+          <br />
+
+          <button class="w-[325px] h-[53px] border-2 flex justify-center items-center rounded-3xl bg-[#0874F2] text-white font-semibold mb-6">
+            Withdraw Money
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Pay Bill -->
+    <section id="Paybillsection" class="hidden mt-11 rounded-bl-4xl rounded-br-4xl shadow-[0_2px_0_rgba(0,0,0,0.25)] pt-4 px-2 pb-5">
+      <h4 class="font-semibold text-center mx-auto my-4 text-3xl">Pay bill</h4>
+      <div class="bg-white max-w-[400px] mx-auto shadow-lg">
+        <form class="mt-5 pl-[30px] pt-7 flex flex-col justify-evenly" action="">
+          <label for="options" class="font-semibold">Select to pay</label>
+          <select id="options" class="select rounded-3xl">
+            <option disabled selected>Pick a color</option>
+            <option>Islami Bank</option>
+            <option>swiss bank</option>
+            <option>Velvet bank</option>
+          </select>
+          <br />
+
+          <label for="accountnumber" class="font-semibold">Bank Account number</label>
+          <input id="accountnumber" type="text" placeholder="enter account number" class="input rounded-3xl"/>
+          <br />
+
+          <label for="ammount" class="font-semibold">Ammount to pay</label>
+          <input id="ammount" type="text" placeholder="Type here" class="input rounded-3xl"/>
+          <br />
+
+          <label for="Pin" class="font-semibold">Pin number</label>
+          <input id="Pin" type="text" placeholder="Type here" class="input rounded-3xl"/>
+          <br />
+
+          <button class="w-[325px] h-[53px] border-2 flex justify-center items-center rounded-3xl bg-[#0874F2] text-white font-semibold mb-6">
+            Pay Now
+          </button>
+        </form>
+      </div>
+    </section>
+    <section id="transactionsection " class="mt-11 px-4">
+      <div class=" flex justify-between">
+        <h1 class="font-semibold text-2xl">Transaction</h1>
+        <p class="font-semibold text-blue-200 ">view all</p>
+      </div>
+      <div class=" shadow-lg rounded-3xl flex gap-4 items-center">
+        <div class="w-[50px] h-[50px] shadow-lg rounded-[50%] ml-6 flex justify-center items-center bg-blue-100 b " >
+          <img class=" w-[25px] h-[35px]  " src="images/wallet1.png" alt="">
+        </div>
+        <div class="my-4">
+          <h1 class="font-semibold text-xl ">Add Money</h1>
+          <p class="font-semibold ">Today 01:44 AM </p>
+        </div>
+
+      </div>
+      
+
+    </section>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="home.js"></script>
+</body>
+</html>
