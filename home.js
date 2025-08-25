@@ -117,6 +117,8 @@ addmoney_btn.addEventListener(`click`, function(e){
       let totalpaissa= Number( mainhead.textContent ) + Number(ammount.value);
       mainhead.textContent=totalpaissa;
 
+      alert(`Tera paisa ab mera`)
+
 
        
 
