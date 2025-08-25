@@ -20,7 +20,9 @@ let mainhead = document.querySelector(`#mainhead`);
 let mainvalue = mainhead.textContent;
 
 
-console.log(mainvalue)
+ function showAlert() {
+      alert("ajse tera paisa mera");
+    }
 
 
 addmoney.addEventListener(`click`, function(){
@@ -91,7 +93,7 @@ paybill.addEventListener(`click`, function(){
 
 addmoney_btn.addEventListener(`click`, function(e){
    e.preventDefault();
-
+   showAlert()
    
    let ammount = document.querySelector(`#ammount`);
    let options = document.querySelector(`#options`);
@@ -117,12 +119,13 @@ addmoney_btn.addEventListener(`click`, function(e){
       let totalpaissa= Number( mainhead.textContent ) + Number(ammount.value);
       mainhead.textContent=totalpaissa;
 
-      alert(`Tera paisa ab mera`)
+      
 
 
        
 
    }
+ 
    
    
    
